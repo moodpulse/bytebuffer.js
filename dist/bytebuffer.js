@@ -21,17 +21,7 @@
  * see: https://github.com/dcodeIO/bytebuffer.js for details
  */
 (function(global, factory) {
-
-    /* AMD */ if (typeof define === 'function' && define["amd"])
-        define(["long"], factory);
-    /* CommonJS */ else if (typeof require === 'function' && typeof module === "object" && module && module["exports"])
-        module['exports'] = (function() {
-            var Long; try { Long = require("long"); } catch (e) {}
-            return factory(Long);
-        })();
-    /* Global */ else
-        (global["dcodeIO"] = global["dcodeIO"] || {})["ByteBuffer"] = factory(global["dcodeIO"]["Long"]);
-
+   module['exports'] = factory(require("long"));
 })(this, function(Long) {
     "use strict";
 
